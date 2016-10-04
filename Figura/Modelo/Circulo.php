@@ -6,7 +6,7 @@
  * Time: 16:10
  */
 
-namespace Modelo;
+namespace figura;
 require_once 'Punto.php';
 require_once 'Figura.php';
 
@@ -25,11 +25,6 @@ class Circulo extends Figura
         parent::__construct($origen);
         $this->radio =$radio;
 
-    }
-
-    public function getOrigen()
-    {
-        return $this->origen;
     }
 
 
@@ -66,7 +61,8 @@ class Circulo extends Figura
      */
     public function __toString()
     {
-        return 'Circulo{' . $this->getOrigen() . ', ' . $this->getRadio() . '}'; //no es necesario poner el __toString()
+        $origenToString =parent::getOrigen();
+        return 'Circulo{' . $origenToString . ', ' . $this->getRadio() . '}'; //no es necesario poner el __toString()
 
         // TODO: Implement __toString() method.
     }
@@ -83,8 +79,9 @@ class Circulo extends Figura
     /**
      *
      */
-    public function esIgual(Circulo $circulo)
+    public function esIgual(Figura $circulo)
     {
+
         return $this->getOrigen()->esIgual($circulo->getOrigen()) &&
         $this->getRadio() == $circulo->getRadio();
     }
@@ -94,7 +91,7 @@ class Circulo extends Figura
      */
     public function area()
     {
-        return M_PI * pow($this->getRadio(), 2);
+        return M_PI * pow($this->radio, 2);
     }
 
     /**
@@ -102,12 +99,15 @@ class Circulo extends Figura
      */
     public function perimetro()
     {
-        return 2 * M_PI * $this->getRadio();
+        return 2 * M_PI * $this->radio;
     }
 
-    public function escalar($escala)
+    /**
+     * @param int $dx
+     */
+    public function escalar($dx)
     {
-        $this->setRadio($this->getRadio() * $escala);
+        $this->radio *= $dx;
     }
 
 

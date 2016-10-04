@@ -45,6 +45,7 @@ abstract class Figura
        $this->origen =$origen;
     }
 
+
     /**
      * @return int
      */
@@ -52,7 +53,6 @@ abstract class Figura
     {
         return self::$numFiguras;
     }
-
     /**
      * area
      * Description
@@ -78,12 +78,14 @@ abstract class Figura
      */
     public function __toString()
     {
-
+        return $this->origen->__toString();
         // TODO: Implement __toString() method.
     }
 
+    public function esIgual(Figura $f)
+    {
 
-
+    }
 
 }
 

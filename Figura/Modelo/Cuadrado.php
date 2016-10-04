@@ -6,14 +6,14 @@
  * Time: 17:45
  */
 
-namespace Modelo;
-require_once '../Modelo/Punto.php';
+namespace figura;
+require_once '../Punto.php';
+require_once '../Figura.php';
 
 
-
-class Cuadrado
+class Cuadrado extends Figura
 {
-    private $origen;
+
     private $lado;
 
     /**
@@ -23,48 +23,21 @@ class Cuadrado
      */
     public function __construct(Punto $origen, $lado)
     {
-        $this->origen =$origen;
+        parent::__construct($origen);
         $this->lado =$lado;
     }
 
-    /**
-     * @return Punto
-     */
-    public function getOrigen(): Punto
-    {
-        return $this->origen;
-    }
 
-    /**
-     * @param Punto $origen
-     */
-    public function setOrigen(Punto $origen)
-    {
-        $this->origen = $origen;
-    }
 
-    /**
-     * @return int
-     */
-    public function getLado()
-    {
-        return $this->lado;
-    }
 
-    /**
-     * @param $lado
-     */
-    public function setLado($lado)
-    {
-        $this->lado = $lado;
-    }
 
     /**
      * toString()
      */
     public function __toString()
     {
-        return 'Cuadrado{' . $this->getOrigen() . ',' . $this->getLado() . '}';
+        $origenToSting =parent::getOrigen();
+        return 'Cuadrado{' . $origenToSting . ',' . $this->getLado() . '}';
         // TODO: Implement __toString() method.
     }
 
@@ -82,5 +55,33 @@ class Cuadrado
         $this->getLado() == $cuadrado->getLado();
     }
 
+    /**
+     * area
+     * Description
+     * return int
+     */
+    public function area()
+    {
+        // TODO: Implement area() method.
+    }
+
+    /**
+     * perimetro
+     * Description
+     * return mixed
+     */
+    public function perimetro()
+    {
+        // TODO: Implement perimetro() method.
+    }
+
+    /**
+     * @param int $dx
+     * @return mixed
+     */
+    public function escalar($dx)
+    {
+        // TODO: Implement escalar() method.
+    }
 }
 

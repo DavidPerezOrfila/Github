@@ -84,7 +84,13 @@ abstract class Figura
 
     public function esIgual(Figura $f)
     {
-
+        if ($this->getOrigen()->esIgual($f->getOrigen()))
+        {
+            return true;
+        }else
+            {
+            return false;
+        }
     }
 
 }

@@ -114,7 +114,12 @@ class Triangulo extends Figura
      */
     public function perimetro()
     {
+    //El Perímetro de un triángulo rectángulo es:
+        $a = $this->getBase();
+        $b = $this->getAltura();
 
+        $pitagorasHipotenusa = $a + $b + (sqrt(pow($a, 2) + pow($b, 2)));
+        return $pitagorasHipotenusa;
         // TODO: Implement perimetro() method.
     }
 
